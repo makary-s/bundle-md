@@ -1,0 +1,28 @@
+{
+  "name": "bundle-md",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup src/cli.ts --clean && mv dist/cli.js dist/bundle-md",
+    "start": "node dist/bundle-md",
+    "dev": "ts-node src/cli.ts",
+    "bin:install": "npm ci && npm run build && npm install -g .",
+    "bin:uninstall": "npm uninstall -g bundle-md"
+  },
+  "bin": {
+    "bundle-md": "./dist/bundle-md"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.2",
+    "@types/yargs": "^17.0.31",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "ignore": "^5.3.0",
+    "valibot": "^0.30.0"
+  }
+}
